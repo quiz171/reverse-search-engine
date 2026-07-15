@@ -1,15 +1,7 @@
 {
-  "users": [
-    {
-      "id": 1,
-      "email": "admin@yourdomain.edu",
-      "password": "$2b$10$3hv18rEIqRIYRn8TGZhvz.7hfsKjqHoA6.PUOe/mqaB.OgDr9R94e",
-      "role": "admin",
-      "created_at": "2026-07-15T12:44:35.505Z"
-    }
-  ],
+  "users": [],
   "students": [],
-  "admins": [
+  "admins": [],
     {
       "user_id": 1,
       "name": "Super Administrator"
