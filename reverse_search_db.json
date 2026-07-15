@@ -1,0 +1,417 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "admin@search.edu",
+      "password": "$2b$10$3hv18rEIqRIYRn8TGZhvz.7hfsKjqHoA6.PUOe/mqaB.OgDr9R94e",
+      "role": "admin",
+      "created_at": "2026-07-15T12:44:35.505Z"
+    },
+    {
+      "id": 2,
+      "email": "student@search.edu",
+      "password": "$2b$10$8kFh8ndfdbmNJp7kMJY/BuBsRyznRD7LkeGPDZtQTPm4UHxHI1zSe",
+      "role": "student",
+      "created_at": "2026-07-15T12:44:35.765Z"
+    }
+  ],
+  "students": [
+    {
+      "user_id": 2,
+      "name": "Nelson (Demo Student)",
+      "department": "Computer Science",
+      "level": "300 Level"
+    }
+  ],
+  "admins": [
+    {
+      "user_id": 1,
+      "name": "Super Administrator"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Lecture Notes"
+    },
+    {
+      "id": 2,
+      "name": "Books"
+    },
+    {
+      "id": 3,
+      "name": "Past Questions"
+    },
+    {
+      "id": 4,
+      "name": "Final Year Projects"
+    },
+    {
+      "id": 5,
+      "name": "Video Tutorials"
+    },
+    {
+      "id": 6,
+      "name": "Research Papers"
+    },
+    {
+      "id": 7,
+      "name": "Programming Tutorials"
+    }
+  ],
+  "resources": [
+    {
+      "id": 1,
+      "title": "Introduction to Stacks, Queues and Lists",
+      "description": "A comprehensive set of notes covering linear data structures, sequential allocations, dynamic queues, and stack push/pop operations with C++ implementations.",
+      "category_id": 1,
+      "department": "Computer Science",
+      "level": "200 Level",
+      "course_code": "CSC201",
+      "file_path": null,
+      "external_link": "https://opendsa-server.cs.vt.edu/ODSA/Books/CS3/html/StackArray.html",
+      "created_at": "2026-07-15T12:44:35.767Z"
+    },
+    {
+      "id": 2,
+      "title": "Binary Search Trees and Balanced AVL Trees",
+      "description": "Learn how to construct and balance binary search trees. This resource covers AVL tree rotations, tree traversals (inorder, preorder, postorder), and binary tree height calculation.",
+      "category_id": 7,
+      "department": "Computer Science",
+      "level": "300 Level",
+      "course_code": "CSC302",
+      "file_path": null,
+      "external_link": "https://www.geeksforgeeks.org/binary-search-tree-data-structure/",
+      "created_at": "2026-07-15T12:44:35.768Z"
+    },
+    {
+      "id": 3,
+      "title": "Predictive Analytics and Machine Learning with Python",
+      "description": "A past student's graduation project building an end-to-end predictive machine learning model. Uses supervised learning regression and classification models built on pandas, numpy, and scikit-learn.",
+      "category_id": 4,
+      "department": "Computer Science",
+      "level": "400 Level",
+      "course_code": "CSC499",
+      "file_path": null,
+      "external_link": "https://github.com/topics/machine-learning-project",
+      "created_at": "2026-07-15T12:44:35.768Z"
+    },
+    {
+      "id": 4,
+      "title": "Advanced Node.js Backend Framework Design",
+      "description": "Master backend systems with Node.js, Express, and databases. Covers asynchronous middleware patterns, request sanitization, routing architecture, and building rest apis.",
+      "category_id": 7,
+      "department": "Software Engineering",
+      "level": "400 Level",
+      "course_code": "SEN401",
+      "file_path": null,
+      "external_link": "https://expressjs.com/",
+      "created_at": "2026-07-15T12:44:35.768Z"
+    },
+    {
+      "id": 5,
+      "title": "Principles of Computer Networks and IP Routing",
+      "description": "Standard textbook on computer networking. Covers TCP/IP model, network layer routing protocols, packet switching, subnets, and standard port configurations.",
+      "category_id": 2,
+      "department": "Computer Engineering",
+      "level": "300 Level",
+      "course_code": "CPE305",
+      "file_path": null,
+      "external_link": "https://www.ietf.org/",
+      "created_at": "2026-07-15T12:44:35.768Z"
+    },
+    {
+      "id": 6,
+      "title": "CSC101 Introduction to Programming Past Questions",
+      "description": "Compiled collection of past exams from CSC101 (Introduction to Computer Science and Programming). Includes theory questions on loops, conditional statements, basic algorithms, and functions.",
+      "category_id": 3,
+      "department": "Computer Science",
+      "level": "100 Level",
+      "course_code": "CSC101",
+      "file_path": null,
+      "external_link": null,
+      "created_at": "2026-07-15T12:44:35.768Z"
+    },
+    {
+      "id": 7,
+      "title": "Deep Learning Architectures for Image Recognition",
+      "description": "Research paper discussing convolutional neural networks (CNNs), deep learning models, image recognition benchmarks, and tensor computations.",
+      "category_id": 6,
+      "department": "Artificial Intelligence",
+      "level": "400 Level",
+      "course_code": "AI402",
+      "file_path": null,
+      "external_link": null,
+      "created_at": "2026-07-15T12:44:35.768Z"
+    }
+  ],
+  "resource_tags": [
+    {
+      "id": 1,
+      "resource_id": 1,
+      "tag": "stack"
+    },
+    {
+      "id": 2,
+      "resource_id": 1,
+      "tag": "queue"
+    },
+    {
+      "id": 3,
+      "resource_id": 1,
+      "tag": "list"
+    },
+    {
+      "id": 4,
+      "resource_id": 1,
+      "tag": "dynamic"
+    },
+    {
+      "id": 5,
+      "resource_id": 1,
+      "tag": "data structure"
+    },
+    {
+      "id": 6,
+      "resource_id": 1,
+      "tag": "C++"
+    },
+    {
+      "id": 7,
+      "resource_id": 1,
+      "tag": "recursion"
+    },
+    {
+      "id": 8,
+      "resource_id": 1,
+      "tag": "tutorial"
+    },
+    {
+      "id": 9,
+      "resource_id": 2,
+      "tag": "binary tree"
+    },
+    {
+      "id": 10,
+      "resource_id": 2,
+      "tag": "bst"
+    },
+    {
+      "id": 11,
+      "resource_id": 2,
+      "tag": "avl"
+    },
+    {
+      "id": 12,
+      "resource_id": 2,
+      "tag": "tree traversal"
+    },
+    {
+      "id": 13,
+      "resource_id": 2,
+      "tag": "recursion"
+    },
+    {
+      "id": 14,
+      "resource_id": 2,
+      "tag": "algorithm"
+    },
+    {
+      "id": 15,
+      "resource_id": 2,
+      "tag": "balanced tree"
+    },
+    {
+      "id": 16,
+      "resource_id": 3,
+      "tag": "machine learning"
+    },
+    {
+      "id": 17,
+      "resource_id": 3,
+      "tag": "python"
+    },
+    {
+      "id": 18,
+      "resource_id": 3,
+      "tag": "supervised learning"
+    },
+    {
+      "id": 19,
+      "resource_id": 3,
+      "tag": "regression"
+    },
+    {
+      "id": 20,
+      "resource_id": 3,
+      "tag": "classification"
+    },
+    {
+      "id": 21,
+      "resource_id": 3,
+      "tag": "pandas"
+    },
+    {
+      "id": 22,
+      "resource_id": 3,
+      "tag": "data science"
+    },
+    {
+      "id": 23,
+      "resource_id": 3,
+      "tag": "ai"
+    },
+    {
+      "id": 24,
+      "resource_id": 3,
+      "tag": "artificial intelligence"
+    },
+    {
+      "id": 25,
+      "resource_id": 4,
+      "tag": "nodejs"
+    },
+    {
+      "id": 26,
+      "resource_id": 4,
+      "tag": "backend"
+    },
+    {
+      "id": 27,
+      "resource_id": 4,
+      "tag": "express"
+    },
+    {
+      "id": 28,
+      "resource_id": 4,
+      "tag": "rest api"
+    },
+    {
+      "id": 29,
+      "resource_id": 4,
+      "tag": "server"
+    },
+    {
+      "id": 30,
+      "resource_id": 4,
+      "tag": "javascript"
+    },
+    {
+      "id": 31,
+      "resource_id": 4,
+      "tag": "database"
+    },
+    {
+      "id": 32,
+      "resource_id": 4,
+      "tag": "systems"
+    },
+    {
+      "id": 33,
+      "resource_id": 5,
+      "tag": "networking"
+    },
+    {
+      "id": 34,
+      "resource_id": 5,
+      "tag": "tcp"
+    },
+    {
+      "id": 35,
+      "resource_id": 5,
+      "tag": "ip"
+    },
+    {
+      "id": 36,
+      "resource_id": 5,
+      "tag": "router"
+    },
+    {
+      "id": 37,
+      "resource_id": 5,
+      "tag": "packet"
+    },
+    {
+      "id": 38,
+      "resource_id": 5,
+      "tag": "subnet"
+    },
+    {
+      "id": 39,
+      "resource_id": 5,
+      "tag": "computer network"
+    },
+    {
+      "id": 40,
+      "resource_id": 5,
+      "tag": "protocol"
+    },
+    {
+      "id": 41,
+      "resource_id": 6,
+      "tag": "programming"
+    },
+    {
+      "id": 42,
+      "resource_id": 6,
+      "tag": "exam"
+    },
+    {
+      "id": 43,
+      "resource_id": 6,
+      "tag": "past question"
+    },
+    {
+      "id": 44,
+      "resource_id": 6,
+      "tag": "csc101"
+    },
+    {
+      "id": 45,
+      "resource_id": 6,
+      "tag": "basics"
+    },
+    {
+      "id": 46,
+      "resource_id": 6,
+      "tag": "coding"
+    },
+    {
+      "id": 47,
+      "resource_id": 6,
+      "tag": "python"
+    },
+    {
+      "id": 48,
+      "resource_id": 7,
+      "tag": "deep learning"
+    },
+    {
+      "id": 49,
+      "resource_id": 7,
+      "tag": "cnn"
+    },
+    {
+      "id": 50,
+      "resource_id": 7,
+      "tag": "image recognition"
+    },
+    {
+      "id": 51,
+      "resource_id": 7,
+      "tag": "ai"
+    },
+    {
+      "id": 52,
+      "resource_id": 7,
+      "tag": "machine learning"
+    },
+    {
+      "id": 53,
+      "resource_id": 7,
+      "tag": "neural networks"
+    }
+  ],
+  "favorites": [],
+  "search_history": []
+}

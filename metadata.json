@@ -1,0 +1,6 @@
+{
+  "name": "Reverse Search Engine for Students",
+  "description": "A reverse search engine that allows students to search for learning resources by meaning, problems, or descriptions rather than exact titles.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
