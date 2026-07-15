@@ -98,26 +98,9 @@ export default function AuthView({ onLoginSuccess, onCancel, initialMode = "stud
           </div>
         )}
 
-        {mode === "student-login" && (
-          <div className="mb-4 p-3 bg-slate-50 dark:bg-slate-955/50 border border-slate-200 dark:border-slate-800 rounded-xl text-xs text-slate-600 dark:text-slate-400">
-            <span className="font-bold text-slate-700 dark:text-slate-300 block mb-0.5">💡 Demo Student Credentials:</span>
-            <div className="flex flex-col sm:flex-row sm:justify-between gap-1">
-              <span>Email: <strong className="font-mono text-indigo-600 dark:text-indigo-400">student@search.edu</strong></span>
-              <span>Password: <strong className="font-mono text-indigo-600 dark:text-indigo-400">student123</strong></span>
-            </div>
-            <span className="text-[10px] text-slate-400 dark:text-slate-500 block mt-1">Or click 'Register Now' below to create a custom account!</span>
-          </div>
-        )}
+        {/* Demo credentials removed for production */}
 
-        {mode === "admin-login" && (
-          <div className="mb-4 p-3 bg-slate-50 dark:bg-slate-955/50 border border-slate-200 dark:border-slate-800 rounded-xl text-xs text-slate-600 dark:text-slate-400">
-            <span className="font-bold text-slate-700 dark:text-slate-300 block mb-0.5">🔑 Demo Admin Credentials:</span>
-            <div className="flex flex-col sm:flex-row sm:justify-between gap-1">
-              <span>Email: <strong className="font-mono text-indigo-600 dark:text-indigo-400">admin@search.edu</strong></span>
-              <span>Password: <strong className="font-mono text-indigo-600 dark:text-indigo-400">admin123</strong></span>
-            </div>
-          </div>
-        )}
+        {/* Demo admin credentials removed */}
 
         <form onSubmit={handleSubmit} className="space-y-4">
           {mode === "student-register" && (
@@ -154,7 +137,7 @@ export default function AuthView({ onLoginSuccess, onCancel, initialMode = "stud
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder={mode === "admin-login" ? "admin@search.edu" : "student@university.edu"}
+                placeholder={mode === "admin-login" ? "admin@yourdomain.edu" : "student@university.edu"}
                 className="w-full pl-9 pr-4 py-2 border border-slate-300 dark:border-slate-750 rounded-lg text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all bg-white dark:bg-slate-950"
               />
             </div>

@@ -520,46 +520,31 @@ export async function initDatabase() {
   await loadDb();
 
   // Seed default admin if not exists
-  const defaultAdminEmail = "admin@search.edu";
+  const defaultAdminEmail = "admin@yourdomain.edu";
   const existingAdmin = data.users.find(u => u.email === defaultAdminEmail);
   if (!existingAdmin) {
-    const hashedPassword = await bcrypt.hash("admin123", 10);
-    const userId = getNextId(data.users);
-    data.users.push({
-      id: userId,
-      email: defaultAdminEmail,
-      password: hashedPassword,
-      role: "admin",
-      created_at: new Date().toISOString()
-    });
-    data.admins.push({
-      user_id: userId,
-      name: "Super Administrator"
-    });
-    console.log("Seeded default admin (email: admin@search.edu, password: admin123)");
+    const adminPassword = process.env.ADMIN_INITIAL_PASSWORD;
+    if (adminPassword) {
+      const hashedPassword = await bcrypt.hash(adminPassword, 10);
+      const userId = getNextId(data.users);
+      data.users.push({
+        id: userId,
+        email: defaultAdminEmail,
+        password: hashedPassword,
+        role: "admin",
+        created_at: new Date().toISOString()
+      });
+      data.admins.push({
+        user_id: userId,
+        name: "Super Administrator"
+      });
+      console.log("Seeded default admin account");
+    } else {
+      console.log("No ADMIN_INITIAL_PASSWORD set — default admin not created.");
+    }
   }
 
-  // Seed default student if not exists
-  const defaultStudentEmail = "student@search.edu";
-  const existingStudent = data.users.find(u => u.email === defaultStudentEmail);
-  if (!existingStudent) {
-    const hashedPassword = await bcrypt.hash("student123", 10);
-    const userId = getNextId(data.users);
-    data.users.push({
-      id: userId,
-      email: defaultStudentEmail,
-      password: hashedPassword,
-      role: "student",
-      created_at: new Date().toISOString()
-    });
-    data.students.push({
-      user_id: userId,
-      name: "Nelson (Demo Student)",
-      department: "Computer Science",
-      level: "300 Level"
-    });
-    console.log("Seeded default student (email: student@search.edu, password: student123)");
-  }
+  // Demo student seeding removed for production
 
   // Seed default categories if empty
   if (data.categories.length === 0) {

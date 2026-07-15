@@ -2,27 +2,13 @@
   "users": [
     {
       "id": 1,
-      "email": "admin@search.edu",
+      "email": "admin@yourdomain.edu",
       "password": "$2b$10$3hv18rEIqRIYRn8TGZhvz.7hfsKjqHoA6.PUOe/mqaB.OgDr9R94e",
       "role": "admin",
       "created_at": "2026-07-15T12:44:35.505Z"
-    },
-    {
-      "id": 2,
-      "email": "student@search.edu",
-      "password": "$2b$10$8kFh8ndfdbmNJp7kMJY/BuBsRyznRD7LkeGPDZtQTPm4UHxHI1zSe",
-      "role": "student",
-      "created_at": "2026-07-15T12:44:35.765Z"
     }
   ],
-  "students": [
-    {
-      "user_id": 2,
-      "name": "Nelson (Demo Student)",
-      "department": "Computer Science",
-      "level": "300 Level"
-    }
-  ],
+  "students": [],
   "admins": [
     {
       "user_id": 1,
