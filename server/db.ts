@@ -520,8 +520,8 @@ export async function initDatabase() {
   await loadDb();
 
   // Seed default admin if not exists
-  const defaultAdminEmail = "admin@yourdomain.edu";
-  const existingAdmin = data.users.find(u => u.email === defaultAdminEmail);
+  const defaultAdminEmail = process.env.ADMIN_EMAIL || "admin@yourdomain.edu";
+  const existingAdmin = data.users.find(u => u.email.toLowerCase().trim() === defaultAdminEmail.toLowerCase().trim());
   if (!existingAdmin) {
     const adminPassword = process.env.ADMIN_INITIAL_PASSWORD;
     if (adminPassword) {
@@ -538,6 +538,7 @@ export async function initDatabase() {
         user_id: userId,
         name: "Super Administrator"
       });
+      await saveDb();
       console.log("Seeded default admin account");
     } else {
       console.log("No ADMIN_INITIAL_PASSWORD set — default admin not created.");
