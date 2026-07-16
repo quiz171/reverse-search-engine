@@ -518,6 +518,7 @@ export const dbQuery = {
 export async function initDatabase() {
   console.log("Initializing pure-JS JSON database...");
   await loadDb();
+  console.log(`Loaded data: ${data.users.length} users, ${data.students.length} students, ${data.resources.length} resources`);
 
   // Seed default admin if not exists
   const defaultAdminEmail = process.env.ADMIN_EMAIL || "admin@yourdomain.edu";

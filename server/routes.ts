@@ -108,12 +108,14 @@ router.post("/auth/register", async (req: Request, res: Response) => {
       "INSERT INTO users (email, password, role) VALUES (?, ?, 'student')",
       [email, hashedPassword]
     );
+    console.log(`✓ User registered: id=${userId}, email=${email}`);
 
     // Insert into students
-    await dbQuery.run(
+    const studentResult = await dbQuery.run(
       "INSERT INTO students (user_id, name, department, level) VALUES (?, ?, ?, ?)",
       [userId, name, department || "", level || ""]
     );
+    console.log(`✓ Student profile created: user_id=${userId}, name=${name}`);
 
     // Auto-login after registration
     req.session.user = {
@@ -123,6 +125,7 @@ router.post("/auth/register", async (req: Request, res: Response) => {
       name
     };
 
+    console.log(`✓ Registration complete and session set for ${email}`);
     res.status(201).json({ message: "Registration successful!", user: req.session.user });
   } catch (err: any) {
     res.status(500).json({ error: err.message || "Server registration error" });
@@ -139,16 +142,23 @@ router.post("/auth/login", async (req: Request, res: Response) => {
     }
 
     const email = rawEmail.toLowerCase().trim();
+    console.log(`Login attempt: ${email}`);
 
     const user = await dbQuery.get("SELECT * FROM users WHERE email = ?", [email]);
     if (!user) {
+      console.log(`✗ Login failed: user not found for email=${email}`);
       return res.status(401).json({ error: "Invalid email or password." });
     }
 
+    console.log(`✓ User found: id=${user.id}, role=${user.role}`);
+
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
+      console.log(`✗ Login failed: password mismatch for email=${email}`);
       return res.status(401).json({ error: "Invalid email or password." });
     }
+
+    console.log(`✓ Password matched for email=${email}`);
 
     let name = "User";
     if (user.role === "admin") {
@@ -166,8 +176,10 @@ router.post("/auth/login", async (req: Request, res: Response) => {
       name
     };
 
+    console.log(`✓ Login successful: id=${user.id}, email=${email}, role=${user.role}`);
     res.json({ message: "Login successful!", user: req.session.user });
   } catch (err: any) {
+    console.error("Login error:", err.message);
     res.status(500).json({ error: err.message || "Server login error" });
   }
 });
